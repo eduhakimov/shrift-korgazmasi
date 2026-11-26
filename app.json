@@ -1,0 +1,87 @@
+{
+  "slug": "shrift-korgazmasi",
+  "exe_name": "ShriftKorgazmasi",
+  "version": "1.0.0",
+  "accent": "#7c3aed",
+  "icon_text": "Aa",
+  "folder": "Shrift ko'rgazmasi",
+  "name": {
+    "uz": "Shrift ko'rgazmasi",
+    "ru": "Просмотр шрифтов",
+    "en": "Font Showcase"
+  },
+  "description": {
+    "uz": "O'rnatilgan shriftlarni ko'rish va taqqoslash. Har bir shriftda o'zbek lotin (ʻ ʼ) va kirill (Ў Қ Ғ Ҳ) harflari bor-yo'qligi avtomatik tekshiriladi.",
+    "ru": "Просмотр и сравнение установленных шрифтов. Для каждого шрифта автоматически проверяется наличие узбекских латинских (ʻ ʼ) и кириллических (Ў Қ Ғ Ҳ) букв.",
+    "en": "Browse and compare installed fonts. Each font is automatically checked for Uzbek Latin (ʻ ʼ) and Cyrillic (Ў Қ Ғ Ҳ) glyphs."
+  },
+  "features": {
+    "uz": [
+      "Barcha o'rnatilgan shriftlar bitta ro'yxatda, o'z matningiz va o'lcham bilan",
+      "O'zbek lotin (U+02BB ʻ, U+02BC ʼ) va kirill (Ў ў Қ қ Ғ ғ Ҳ ҳ) belgilarini avtomatik tekshirish",
+      "\"Faqat o'zbekcha mos\" saralash, qidiruv, monospace / proporsional filtr",
+      "Sevimli shriftlar ro'yxati",
+      "2–4 shriftni yonma-yon taqqoslash",
+      "Namunani PNG ga saqlash, nomini nusxalash, fayl joyini ochish",
+      "1000+ shriftda ham tez ishlaydi (faqat ko'ringan qatorlar chiziladi)",
+      "O'zbek, rus, ingliz tillari; yorug' va qorong'i mavzu"
+    ],
+    "ru": [
+      "Все установленные шрифты в одном списке с вашим текстом и размером",
+      "Автопроверка узбекской латиницы (U+02BB ʻ, U+02BC ʼ) и кириллицы (Ў ў Қ қ Ғ ғ Ҳ ҳ)",
+      "Фильтр «только узбекские», поиск, моно / пропорциональные",
+      "Избранные шрифты",
+      "Сравнение 2–4 шрифтов рядом",
+      "Экспорт образца в PNG, копирование имени, открытие расположения файла",
+      "Быстро даже при 1000+ шрифтов (рисуются только видимые строки)",
+      "Узбекский, русский, английский; светлая и тёмная тема"
+    ],
+    "en": [
+      "All installed fonts in one list with your own text and size",
+      "Automatic check of Uzbek Latin (U+02BB ʻ, U+02BC ʼ) and Cyrillic (Ў ў Қ қ Ғ ғ Ҳ ҳ) glyphs",
+      "\"Uzbek-compatible only\" filter, search, monospace / proportional filter",
+      "Favourite fonts",
+      "Compare 2–4 fonts side by side",
+      "Export preview as PNG, copy font name, open file location",
+      "Fast with 1000+ fonts (only visible rows are drawn)",
+      "Uzbek, Russian, English; light and dark themes"
+    ]
+  },
+  "category": "Dizayn / tipografiya",
+  "topics": [
+    "fonts",
+    "typography",
+    "font-viewer",
+    "uzbek-language",
+    "graphic-design"
+  ],
+  "min_os": "Windows 10 (1809+) / Windows 11, x64",
+  "build": {
+    "mode": "onefile",
+    "excludes": [
+      "numpy",
+      "matplotlib"
+    ]
+  },
+  "font": "Segoe UI Variable Text",
+  "palette": {
+    "light": {
+      "bg": "#f3f2f7",
+      "surface": "#ffffff",
+      "surface2": "#ecebf2",
+      "border": "#dcdae6",
+      "text": "#1d1a29",
+      "muted": "#6b6780",
+      "hover": "#e7e5f0"
+    },
+    "dark": {
+      "bg": "#151320",
+      "surface": "#1e1b2c",
+      "surface2": "#272338",
+      "border": "#363149",
+      "text": "#ebe8f5",
+      "muted": "#9d97b5",
+      "hover": "#2d2940"
+    }
+  }
+}
