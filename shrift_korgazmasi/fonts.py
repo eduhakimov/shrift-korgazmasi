@@ -146,7 +146,8 @@ class SupportCache:
         try:
             raw = json.loads(self.path.read_text(encoding="utf-8"))
             if raw.get("v") == self.VERSION:
-                self.data = {k: tuple(v) for k, v in raw.get("fonts", {}).items()}
+                self.data = {k: tuple(v) for k, v in raw.get("fonts", {}).items()
+                             if isinstance(v, (list, tuple)) and len(v) == 2}
         except Exception:
             self.data = {}
 

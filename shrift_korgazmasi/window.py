@@ -28,6 +28,15 @@ OK_COLOR = QColor("#16a34a")
 BAD_COLOR = QColor("#dc2626")
 
 
+def _int_setting(value, default: int, lo: int, hi: int) -> int:
+    """Sozlamadagi butun sonni xavfsiz o'qish (buzilgan qiymat bo'lsa standart)."""
+    try:
+        v = int(value)
+    except (TypeError, ValueError):
+        return default
+    return max(lo, min(hi, v))
+
+
 def _accent() -> QColor:
     return QColor(appmod.META.get("accent", "#7c3aed"))
 
@@ -314,9 +323,11 @@ class BrowsePage(QWidget):
         self.win = win
         st = win.settings
         self.s = State()
-        self.s.size = int(st.get("size", 28))
-        self.s.text = st.get("preview_text", F.SHORT_SAMPLE) or F.SHORT_SAMPLE
-        self.s.favorites = set(st.get("favorites", []))
+        self.s.size = _int_setting(st.get("size"), 28, 10, 96)
+        txt = st.get("preview_text")
+        self.s.text = txt if isinstance(txt, str) and txt else F.SHORT_SAMPLE
+        favs = st.get("favorites")
+        self.s.favorites = {f for f in favs if isinstance(f, str)} if isinstance(favs, list) else set()
         self.cache = F.SupportCache(data_dir(appmod.META["slug"]) / "uzbek_support.json")
         self.all_fams = F.families()
         for fam in self.all_fams:
@@ -737,7 +748,8 @@ class ComparePage(QWidget):
         self.grid.setContentsMargins(0, 0, 0, 0)
         self.grid.setSpacing(12)
         fams = browse.all_fams
-        saved = win.settings.get("compare", [])
+        saved = win.settings.get("compare")
+        saved = [x for x in saved if isinstance(x, str)] if isinstance(saved, list) else []
         defaults = [f for f in ("Segoe UI", "Times New Roman", "Arial", "Georgia", "Calibri", "Consolas")
                     if f in fams]
         self.slots = []
@@ -748,7 +760,7 @@ class ComparePage(QWidget):
             s.combo.setCurrentText(pick)
             s.combo.currentTextChanged.connect(self.refresh)
             self.slots.append(s)
-        self.count.setValue(int(win.settings.get("compare_count", 2 if not SCREENSHOT else 4)))
+        self.count.setValue(_int_setting(win.settings.get("compare_count"), 2, 2, 4))
         if SCREENSHOT:
             self.count.setValue(4)
         lay.addWidget(self.grid_w, 1)
@@ -827,6 +839,8 @@ class MainWindow(BaseMainWindow):
         self._nav.setObjectName("Segment")
         self._nav.setDrawBase(False)
         self._nav.setExpanding(False)
+        self._nav.setUsesScrollButtons(False)
+        self._nav.setElideMode(Qt.ElideNone)
         self._nav.addTab(tr("view_list"))
         self._nav.addTab(tr("view_compare"))
         head.addWidget(self._nav, 0, Qt.AlignBottom)
