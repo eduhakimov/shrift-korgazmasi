@@ -1,0 +1,445 @@
+{
+  "nom": "Shrift ko‘rgazmasi",
+  "muallif": "Hakimov Bahtiyorjon",
+  "maqola": {
+    "udk": "004.42:003.2",
+    "sarlavha": {
+      "uz": "O‘rnatilgan shriftlarni ko‘rish, taqqoslash va ularda o‘zbek lotin hamda kirill harflari mavjudligini avtomatik tekshirish uchun dasturiy vosita",
+      "ru": "Программное средство для просмотра и сравнения установленных шрифтов и автоматической проверки наличия в них узбекских латинских и кириллических букв",
+      "en": "A software tool for browsing and comparing installed fonts and automatically checking them for Uzbek Latin and Cyrillic letters"
+    },
+    "annotatsiya": {
+      "uz": "Maqolada Windows kompyuterida o‘rnatilgan shriftlarni ko‘rish va taqqoslash uchun ishlab chiqilgan “Shrift ko‘rgazmasi” dasturi tavsiflanadi. Dasturning asosiy xususiyati – har bir shriftda o‘zbek lotin alifbosidagi o‘, g‘ harflari va tutuq belgisi uchun ishlatiladigan U+02BB va U+02BC kodli belgilar hamda o‘zbek kirill alifbosining Ў, Қ, Ғ, Ҳ harflari mavjudligini avtomatik tekshirish. Dastur barcha shriftlarni foydalanuvchi matni va o‘lchami bilan bitta ro‘yxatda ko‘rsatadi, ularni o‘zbek harflari mavjudligi, turi va nomi bo‘yicha saralaydi, sevimlilar ro‘yxatini yuritadi, ikki-to‘rt shriftni yonma-yon taqqoslaydi va namunani PNG rasmga saqlaydi. Tekshiruv natijalari diskda keshlanadi. Qt shrift tizimiga asoslangan arxitektura va testlar yoritiladi.",
+      "ru": "В статье описывается программа «Shrift ko‘rgazmasi» («Выставка шрифтов») для просмотра и сравнения шрифтов, установленных на компьютере с Windows. Главная особенность программы – автоматическая проверка наличия в каждом шрифте символов U+02BB и U+02BC, используемых в узбекской латинице для букв o‘, g‘ и апострофа, а также букв Ў, Қ, Ғ, Ҳ узбекской кириллицы. Программа показывает все шрифты в одном списке с текстом и размером пользователя, фильтрует их по наличию узбекских букв, типу и названию, ведёт список избранного, сравнивает от двух до четырёх шрифтов рядом и сохраняет образец в PNG. Результаты проверки кэшируются на диске. Рассматриваются архитектура на основе шрифтовой системы Qt и тесты.",
+      "en": "The paper describes “Shrift ko‘rgazmasi” (Font Showcase), an application for browsing and comparing fonts installed on a Windows computer. Its main feature is an automatic check of every font for the characters U+02BB and U+02BC, used in the Uzbek Latin alphabet for the letters o‘ and g‘ and for the apostrophe, and for the letters Ў, Қ, Ғ, Ҳ of the Uzbek Cyrillic alphabet. The program shows all fonts in one list with the user’s text and size, filters them by Uzbek letter support, type and name, keeps a list of favourites, compares two to four fonts side by side and saves a sample as a PNG image. Check results are cached on disk. The architecture based on the Qt font system and the tests are discussed."
+    },
+    "kalit": {
+      "uz": [
+        "shrift",
+        "tipografiya",
+        "o‘zbek alifbosi",
+        "Unicode",
+        "glif",
+        "PySide6",
+        "shriftlarni taqqoslash"
+      ],
+      "ru": [
+        "шрифт",
+        "типографика",
+        "узбекский алфавит",
+        "Unicode",
+        "глиф",
+        "PySide6",
+        "сравнение шрифтов"
+      ],
+      "en": [
+        "font",
+        "typography",
+        "Uzbek alphabet",
+        "Unicode",
+        "glyph",
+        "PySide6",
+        "font comparison"
+      ]
+    },
+    "bolimlar": [
+      {
+        "sarlavha": "Kirish",
+        "matn": [
+          "Matnli hujjatlar, taqdimotlar, plakatlar, veb-sahifalar va bosma mahsulotlar tayyorlashda shrift tanlash muhim bosqich hisoblanadi. O‘zbek tilidagi materiallar uchun bu vazifa qo‘shimcha murakkablikka ega: o‘zbek lotin alifbosida o‘ va g‘ harflari hamda tutuq belgisi, o‘zbek kirill alifbosida esa Ў, Қ, Ғ, Ҳ kabi maxsus harflar mavjud. Ko‘plab shriftlarda bu belgilar uchun glif (harfning grafik shakli) bo‘lmaydi.",
+          "Agar tanlangan shriftda kerakli glif bo‘lmasa, operatsion tizim yoki dastur uni boshqa shriftdan oladi yoki uning o‘rniga bo‘sh kvadrat chiqaradi. Natijada so‘z ichida bir harf boshqacha ko‘rinishda chiqadi, matnning bir xilligi buziladi, bosma mahsulotda esa xato faqat chop etilgandan keyin aniqlanishi mumkin. Dizayner, kotib yoki o‘qituvchi shriftlarni birma-bir sinab ko‘rishga majbur bo‘ladi, kompyuterda yuzlab shrift o‘rnatilgan bo‘lsa, bu ko‘p vaqt oladi.",
+          "Operatsion tizimning standart shriftlar ko‘ruvchisi shriftni bittadan ochib ko‘rsatadi va unda o‘zbek harflari borligini maxsus tekshirmaydi. Grafik muharrirlardagi shrift ro‘yxatlari ham odatda faqat shrift nomi yoki qisqa namunani ko‘rsatadi. Shu sababli o‘zbek tilidagi matn uchun mos shriftlarni tez topish imkonini beruvchi ixtisoslashgan vosita amaliy ahamiyatga ega.",
+          "“Raqamli O‘zbekiston – 2030” strategiyasida raqamli kontent va mahalliy dasturiy mahsulotlarni rivojlantirish vazifalari belgilangan. O‘zbek tilidagi raqamli matnlarning to‘g‘ri ko‘rinishini ta’minlash bu vazifalarning muhim tarkibiy qismidir.",
+          "Tadqiqotning maqsadi – kompyuterda o‘rnatilgan barcha shriftlarni o‘zbek tilidagi namunada ko‘rsatuvchi, ularda o‘zbek lotin va kirill harflari mavjudligini avtomatik tekshiruvchi va shriftlarni taqqoslash imkonini beruvchi dasturiy vositani ishlab chiqish. Maqolada shu maqsadda yaratilgan “Shrift ko‘rgazmasi” dasturi taqdim etiladi.",
+          "Maqolaning amaliy yangiligi shundaki, unda shriftlarni ko‘rish vositasi o‘zbek alifbosining raqamli muhitdagi xususiyatlariga yo‘naltirilgan: kompyuterdagi barcha shriftlar o‘zbek lotin va kirill yozuvlaridagi maxsus belgilar mavjudligi bo‘yicha avtomatik tekshiriladi, natija esa ro‘yxatda ko‘rgazmali belgilar orqali ko‘rsatiladi va saralash mezoni sifatida ishlatiladi.",
+          "Maqola quyidagi tuzilishga ega: avval mavjud yechimlar tahlil qilinib, vositaga qo‘yiladigan talablar shakllantiriladi; so‘ngra dastur arxitekturasi va algoritmlari, asosiy funksiyalar, sinov natijalari, afzallik va cheklovlar bayon etiladi.",
+          "Ishning o‘quv-uslubiy jihati ham e’tiborga loyiq: dastur belgilar kodlash va shriftlar tuzilishiga oid nazariy tushunchalarni o‘zbek alifbosi misolida ko‘rgazmali namoyish qilish vositasi bo‘lishi mumkin."
+        ]
+      },
+      {
+        "sarlavha": "Muammoning qo‘yilishi va mavjud yechimlar tahlili",
+        "matn": [
+          "Shriftlarni ko‘rish vositalarini uch guruhga ajratish mumkin. Birinchi guruh – operatsion tizimga o‘rnatilgan shriftlar ko‘ruvchisi va shriftlar sozlamalari sahifasi: ular har bir shriftni alohida ochadi va o‘zbek harflarini tekshirish funksiyasiga ega emas. Ikkinchi guruh – grafik va matn muharrirlaridagi shrift ro‘yxatlari: ular shriftni amalda qo‘llash imkonini beradi, lekin ko‘plab shriftlarni bir vaqtda bir xil matnda ko‘rish va saralash imkoniyati cheklangan. Uchinchi guruh – professional shrift boshqaruvchilari va onlayn shrift kataloglari: ularning bir qismi shrift belgilari jadvalini ko‘rsatadi, lekin o‘zbek alifbosiga xos tekshiruvni bevosita taklif etmaydi yoki internet orqali ishlaydi.",
+          "O‘zbek tilining ikki yozuvda qo‘llanishi va lotin yozuvida apostrofsimon belgilarning bir nechta Unicode varianti mavjudligi masalani yanada murakkablashtiradi. Dastur kodida o‘zbek lotin alifbosi uchun o‘ va g‘ harflaridagi belgi sifatida U+02BB kodli belgi, tutuq belgisi sifatida U+02BC kodli belgi qabul qilingan. Ko‘plab shriftlarda oddiy apostrof va tirnoq belgilari bor, ammo bu ikki belgi bo‘lmasligi mumkin.",
+          "Shu tahlil asosida ishlab chiqiladigan vositaga quyidagi talablar qo‘yildi:",
+          "- kompyuterdagi barcha o‘rnatilgan shriftlarni bitta ro‘yxatda, foydalanuvchi tanlagan matn va o‘lchamda ko‘rsatish;",
+          "- har bir shriftda o‘zbek lotin va kirill harflari mavjudligini avtomatik tekshirish va natijani ko‘rgazmali belgilash;",
+          "- shriftlarni o‘zbek harflari mavjudligi, turi (monospace, proporsional, belgili) va nomi bo‘yicha saralash;",
+          "- sevimli shriftlar ro‘yxatini yuritish;",
+          "- bir nechta shriftni bir xil matnda yonma-yon taqqoslash;",
+          "- namunani rasm sifatida saqlash, shrift nomini nusxalash va shrift fayli joyini ochish;",
+          "- yuzlab va minglab shriftlar bilan tez ishlash;",
+          "- tizim shriftlarini o‘zgartirmaslik va internetsiz ishlash.",
+          "Masala yana shu bilan murakkablashadiki, glif yo‘qligi ko‘pincha darhol sezilmaydi. Zamonaviy matn chizish tizimlari yetishmayotgan belgini avtomatik ravishda boshqa shriftdan olishi mumkin: natijada so‘z ekranda o‘qiladi, lekin bitta harf boshqa shriftda, boshqa qalinlik va o‘lchamda chiqadi. Bunday nuqson bosma mahsulotda yoki boshqa kompyuterda ochilgan hujjatda yaqqol ko‘rinadi. Shu sababli tekshiruv ko‘z bilan baholashga emas, balki shrift ichidagi glif jadvalini to‘g‘ridan-to‘g‘ri so‘rashga asoslanishi kerak.",
+          "Qo‘yilgan talablarning barchasi dasturda amalga oshirildi; ularning bajarilishi keyingi bo‘limlarda va avtomatik testlarda ko‘rsatiladi."
+        ]
+      },
+      {
+        "sarlavha": "Tadqiqot metodologiyasi va dasturiy arxitektura",
+        "matn": [
+          "Dastur Python 3.12 tilida yozilgan, grafik interfeysi PySide6 (Qt 6) asosida qurilgan. Shriftlar bilan ishlash to‘liq Qt shrift tizimiga – QFontDatabase va QRawFont sinflariga tayanadi. Shrift fayllarini nomi bo‘yicha topishda zaxira usul sifatida Pillow kutubxonasi ishlatiladi. Dastur PyInstaller yordamida bitta bajariladigan fayl ko‘rinishida yig‘iladi.",
+          "Dastur paketi quyidagi modullardan iborat:",
+          "- **fonts** – shrift oilalari ro‘yxati, uslublar, turini aniqlash, o‘zbek harflarini tekshirish, saralash, tekshiruv natijalari keshi va shrift fayllarini topish;",
+          "- **render** – shrift namunasini rasmga chizish;",
+          "- **icons** – interfeys belgilari;",
+          "- **window** – asosiy oyna, ro‘yxat va taqqoslash ko‘rinishlari;",
+          "- **strings** – uch tildagi interfeys matnlari.",
+          "Fonts moduli grafik interfeysdan alohida yozilgan va testlar uni bevosita tekshiradi.",
+          "**Shriftlar ro‘yxati.** Dastur Qt shrift bazasidan barcha oilalarni oladi va ulardan yashirin (ichki) oilalarni, vertikal yozuv uchun mo‘ljallangan “@” bilan boshlanuvchi oilalarni hamda masshtablanmaydigan eski rastr shriftlarni chiqarib tashlaydi. Qolgan oilalar alifbo tartibida, katta-kichik harflarni farqlamasdan saralanadi.",
+          "**O‘zbek harflarini tekshirish algoritmi.** Har bir shrift oilasi uchun QRawFont obyekti yaratiladi va uning yordamida har bir tekshiriladigan belgi uchun shriftda glif mavjudligi so‘raladi. Lotin yozuvi uchun U+02BB va U+02BC belgilari hamda O, G, Sh, Ch harflari tekshiriladi; kirill yozuvi uchun Ў, ў, Қ, қ, Ғ, ғ, Ҳ, ҳ maxsus harflari hamda bir qator asosiy kirill harflari tekshiriladi. Barcha belgilar mavjud bo‘lsa, shrift tegishli yozuvni qo‘llab-quvvatlaydi deb hisoblanadi. Belgili (Symbol) shriftlar har ikki yozuv uchun mos emas deb belgilanadi. Shriftni o‘qib bo‘lmasa, natija “noma’lum” deb qoldiriladi.",
+          "**Fon tekshiruvi va kesh.** Yuzlab shriftni bir vaqtda tekshirish interfeysni to‘xtatib qo‘ymasligi uchun tekshiruv taymer orqali kichik guruhlarda (har safar o‘n ikkitadan) bajariladi; har bir guruhdan keyin ro‘yxat yangilanadi va holat qatorida jarayon (“Tekshirilmoqda: i / n”) ko‘rsatiladi. Tekshiruv natijalari foydalanuvchining %APPDATA% papkasidagi kesh fayliga yoziladi, shuning uchun keyingi ishga tushirishlarda faqat yangi shriftlar tekshiriladi. Kesh fayli versiya raqamiga ega: format o‘zgarganda eski kesh e’tiborsiz qoldiriladi; fayl shikastlangan bo‘lsa, kesh bo‘sh holatdan boshlanadi.",
+          "**Tez chizish.** Shriftlar ro‘yxati Qt’ning model-ko‘rinish arxitekturasi asosida qurilgan: ma’lumotlar modeli va har bir qatorni chizuvchi delegat alohida. Ko‘rinish faqat ekranda ko‘ringan qatorlarni chizadi, shu sababli dastur hujjatlarida qayd etilganidek, minglab shriftlar o‘rnatilgan kompyuterda ham ro‘yxat tez ishlaydi.",
+          "**Shrift faylini topish.** Shrift fayli joyini ochish uchun dastur Windows reestridagi o‘rnatilgan shriftlar ro‘yxatini faqat o‘qish rejimida ko‘rib chiqadi va oila nomini yozuv nomlari bilan normallashtirilgan holda (qavs ichidagi “TrueType”, “OpenType” kabi qo‘shimchalarsiz) solishtiradi; avval aniq, keyin boshlanishi bo‘yicha mos yozuvlar olinadi. Fayl yo‘li nisbiy bo‘lsa, tizim va foydalanuvchi shriftlari papkalarida qidiriladi. Reestrda topilmasa, zaxira usul sifatida shrift fayllari ichidagi nom bo‘yicha qidiruv bajariladi.",
+          "**Xavfsizlik.** Dastur shriftlarni o‘rnatmaydi, o‘chirmaydi va o‘zgartirmaydi; reestrga yozmaydi, faqat o‘qiydi. Foydalanuvchi ma’lumotlari – sozlamalar, sevimlilar va tekshiruv keshi – faqat dasturning o‘z papkasida saqlanadi. Dastur tarmoqqa murojaat qilmaydi.",
+          "**Shrift turini aniqlash.** Monospace (bir xil kenglikdagi) shriftlar Qt shrift bazasidagi belgilangan kenglik xususiyati bo‘yicha, belgili shriftlar esa yozuv tizimlari ro‘yxati bo‘yicha aniqlanadi: yozuv tizimlari orasida belgilar (Symbol) bo‘lib, lotin yozuvi bo‘lmagan shrift belgili deb hisoblanadi. Proporsional shriftlar – monospace bo‘lmagan barcha shriftlar.",
+          "**Saralash.** Saralash funksiyasi uch mezonni ketma-ket qo‘llaydi: qidiruv so‘rovi (so‘rovdagi har bir so‘z shrift nomida bo‘lishi kerak, katta-kichik harflar farqlanmaydi), saralash rejimi (barcha, sevimlilar, o‘zbek lotin, o‘zbek kirill yoki ikkalasi) va shrift turi. Tekshiruvi hali tugamagan shriftlar o‘zbek harflari bo‘yicha saralashda ko‘rsatilmaydi; tekshiruv tugagach, ro‘yxat avtomatik yangilanadi.",
+          "**Ro‘yxat qatorini chizish.** Delegat har bir qator uchun shrift nomini, sevimli shrift belgisini, “Lotin” va “Kirill” holat belgilarini hamda foydalanuvchi matnini shu shriftning o‘zida chizadi. Tanlangan qator ajratib ko‘rsatiladi. Namuna o‘lchami yoki matni o‘zgarganda delegatning ichki keshi tozalanadi va ko‘ringan qatorlar qayta chiziladi.",
+          "**Namuna rasmini yaratish.** Render moduli namunani belgilangan kenglikdagi oq fonli rasmga chizadi: avval matn egallaydigan balandlik o‘lchanadi, so‘ng shu balandlikka mos rasm yaratiladi, yuqorida kulrang rangda shrift nomi, uslubi va o‘lchami, ostida esa namuna matni so‘zlar bo‘yicha qatorlarga bo‘lingan holda chiziladi. Taqqoslash ko‘rinishida esa kataklar to‘ri ekrandagi ko‘rinishida rasmga olinadi.",
+          "**Sozlamalarni saqlash.** Namuna matni, o‘lcham, sevimli shriftlar ro‘yxati, taqqoslash ko‘rinishidagi shriftlar soni va tanlangan shriftlar foydalanuvchining sozlamalar faylida saqlanadi. Sozlamalar faylidagi qiymatlar o‘qilganda tekshiriladi: masalan, o‘lcham ruxsat etilgan oraliqdan (10–96 piksel) tashqarida bo‘lsa yoki sevimlilar ro‘yxati noto‘g‘ri turda bo‘lsa, standart qiymat qo‘llanadi. Bu shikastlangan sozlamalar bilan ham dasturning barqaror ishga tushishini ta’minlaydi va alohida test bilan tekshiriladi."
+        ]
+      },
+      {
+        "sarlavha": "Amalga oshirish va asosiy funksiyalar",
+        "matn": [
+          "Dastur oynasi ikki ko‘rinishga ega: “Ro‘yxat” va “Taqqoslash”; ular oynaning yuqori o‘ng burchagidagi almashtirgich orqali tanlanadi.",
+          "**Ro‘yxat ko‘rinishi.** Yuqoridagi kartochkada “Qidirish” maydoni, “Saralash” va “Turi” ro‘yxatlari, “Namuna matn” maydoni, “O‘zbekcha namuna” tugmasi va “O‘lcham” slayderi (10 dan 96 pikselgacha) joylashgan. “Saralash” ro‘yxatida beshta variant bor: “Barcha shriftlar”, “Sevimlilar”, “O‘zbekcha to‘liq (lotin + kirill)”, “O‘zbek lotin” va “O‘zbek kirill”. “Turi” ro‘yxatida “Har qanday”, “Monospace (bir xil kenglik)”, “Proporsional” va “Belgili (Symbol)” variantlari mavjud. Qidiruv shrift nomi bo‘yicha, bo‘shliq bilan ajratilgan bir nechta so‘z bo‘yicha bajariladi.",
+          "Chap tomondagi ro‘yxatda har bir shrift nomi, uning namunasi va ikkita belgi – “Lotin” va “Kirill” – ko‘rsatiladi: yashil belgi yozuv qo‘llab-quvvatlanishini, qizil belgi esa yo‘qligini bildiradi. Ro‘yxat ostida shriftlar soni va o‘zbek tilini to‘liq qo‘llab-quvvatlovchi shriftlar soni chiqadi.",
+          "O‘ng tomondagi tafsilotlar panelida tanlangan shriftning nomi, “Uslub” ro‘yxati (masalan, Regular, Bold, Italic), kengaytirilgan namuna matni va “O‘zbek harflari” bo‘limi joylashgan. Bu bo‘limda har bir maxsus belgi alohida katakda ko‘rsatiladi; yo‘q belgilar ajratib ko‘rsatiladi va ularning ro‘yxati beriladi, barchasi mavjud bo‘lsa, “Barcha o‘zbek harflari bor” yozuvi chiqadi. Panel ostida “Sevimlilarga”, “Nomini nusxalash”, “Fayl joyini ochish”, “Taqqoslashga” va “PNG ga saqlash” tugmalari bor.",
+          "**Taqqoslash ko‘rinishi.** Bu ko‘rinishda “Namuna matn” maydoni, “Shriftlar soni” (2 dan 4 gacha), “O‘lcham” slayderi va “PNG ga saqlash” tugmasi joylashgan. Har bir katakda shriftni tanlash ro‘yxati, “Lotin” va “Kirill” belgilari hamda bir xil matnning tanlangan shriftdagi ko‘rinishi beriladi. Ro‘yxat ko‘rinishidagi “Taqqoslashga” tugmasi tanlangan shriftni taqqoslash kataklaridan biriga qo‘shadi.",
+          "**Namunani saqlash.** “PNG ga saqlash” funksiyasi namunani oq fonda, shrift nomi, uslubi va o‘lchami ko‘rsatilgan sarlavha bilan rasmga chizadi; rasm balandligi matn hajmiga qarab avtomatik tanlanadi. Bunday rasm hamkasblarga shrift variantlarini yuborish yoki hisobotga qo‘shish uchun qulay.",
+          "**O‘zbekcha namuna.** Dasturda standart namuna matni sifatida o‘zbek lotin va kirill yozuvidagi qisqa jumlalar ishlatiladi; ular tekshiriladigan barcha maxsus belgilarni o‘z ichiga oladi. Foydalanuvchi o‘z matnini kiritgandan keyin “O‘zbekcha namuna” tugmasi bilan standart matnga qaytishi mumkin. Tafsilotlar panelida esa uzunroq, ikki yozuvdagi to‘liq namuna ko‘rsatiladi.",
+          "**Ko‘rgazmali ma’lumotlar.** Rasmlarda tasvirlangan holatda ro‘yxatda Segoe Script, Segoe UI Emoji, Segoe UI Historic va Segoe UI Symbol shriftlari uchun “Lotin” va “Kirill” belgilari qizil, Segoe UI uchun esa yashil rangda ko‘rsatilgan; taqqoslash ko‘rinishida Segoe UI, Times New Roman va Arial shriftlari ikkala yozuv uchun mos, Georgia esa mos emas deb belgilangan. Bu natijalar rasmlar olingan kompyuterdagi shrift versiyalariga tegishli.",
+          "**Tafsilotlar panelining yangilanishi.** Ro‘yxatda boshqa shrift tanlanganda yoki fon tekshiruvi tugaganda tafsilotlar paneli avtomatik yangilanadi: uslublar ro‘yxati, namuna, harflar kataklari va fayl yo‘li yangi shriftga moslanadi. Tanlangan shrift uchun PNG fayl nomi shrift nomidan avtomatik taklif qilinadi.",
+          "Tafsilotlar panelidan saqlanadigan rasmga foydalanuvchi matni va undan keyin standart o‘zbekcha namuna birga chiziladi, o‘lcham esa kamida 24 piksel qilib olinadi; shu tufayli rasmda shriftning o‘zbek harflari bilan ko‘rinishi har doim aks etadi."
+        ],
+        "rasmlar": [
+          {
+            "fayl": "docs/screenshots/1.png",
+            "izoh": "“Ro‘yxat” ko‘rinishi: shriftlar namunasi, “Lotin” va “Kirill” belgilari, o‘ngda Segoe UI shriftining tafsilotlari va o‘zbek harflari kataklari"
+          },
+          {
+            "fayl": "docs/screenshots/2.png",
+            "izoh": "Qorong‘i mavzudagi “Taqqoslash” ko‘rinishi: to‘rtta shrift bir xil o‘zbekcha matnda"
+          }
+        ]
+      },
+      {
+        "sarlavha": "Sinov va natijalar",
+        "matn": [
+          "Dastur pytest freymvorkida yozilgan avtomatik testlar bilan tekshiriladi. Tests papkasidagi to‘rtta test faylida jami 17 ta test funksiyasi mavjud.",
+          "- Shriftlar moduli testlari (9 ta funksiya): namunaviy matnda o‘zbek harflarining mavjudligi, shriftlar ro‘yxatining bo‘sh emasligi, Arial shriftining o‘zbek harflarini qo‘llab-quvvatlashi, belgili shriftning o‘zbekcha mos emas deb belgilanishi, saralash funksiyasi, reestr yozuvlarini oila nomi bilan solishtirish, shrift faylini topish, kesh faylini yozib qayta o‘qish, namunani PNG rasmga chizish.",
+          "- Chuqur ssenariy testlari (4 ta funksiya): kompyuterda o‘rnatilgan har bir shrift oilasi uchun namuna xatosiz chizilishi, Unicode belgilari bor yo‘lga PNG saqlash, taqqoslashda noma’lum va bo‘sh shrift nomi bilan ishlash, shikastlangan sozlamalar va kesh fayllari bilan ishga tushish.",
+          "- Oyna ssenariylari (2 ta funksiya): tafsilotlar paneli va fayl yo‘llarini yangilash, sevimlilarga qo‘shish va taqqoslashga yuborish.",
+          "- Tutun testlari (2 ta funksiya): asosiy oynaning yaratilishi va tarjimalarning uch tilda to‘liqligi.",
+          "Dastur interfeysi o‘zbek, rus va ingliz tillarida ishlaydi va Windows 10 (1809+) hamda Windows 11 uchun mo‘ljallangan. Rasmda ko‘rsatilgan holatda dastur kompyuterdagi 268 ta shriftni ro‘yxatga olgan va ulardan 23 tasini o‘zbek tilini to‘liq qo‘llab-quvvatlovchi deb belgilagan; bu son har bir kompyuterda o‘rnatilgan shriftlar to‘plamiga bog‘liq va umumlashtiruvchi ko‘rsatkich emas.",
+          "Chuqur ssenariy testlaridan birida kompyuterda o‘rnatilgan barcha shrift oilalari ketma-ket ko‘rib chiqiladi: har biri uchun o‘zbek harflari tekshiruvi xatosiz yakunlanishi, tafsilotlar paneli shu shriftga o‘tishi va o‘zbek harflari bor qisqa namuna rasmga chizilishi tekshiriladi. Bu test dasturning real tizimdagi turli shriftlar bilan barqaror ishlashini tasdiqlashga qaratilgan. Arial shrifti bo‘yicha test esa tekshiruv algoritmining ma’lum natija bilan mosligini tekshiradi.",
+          "Mazkur ishda ro‘yxatni chizish tezligi va tekshiruv davomiyligi miqdoriy o‘lchanmagan.",
+          "Shunday qilib, testlar dasturning uchta asosiy jihatini qamrab oladi: o‘zbek harflarini tekshirish mantig‘ining to‘g‘riligi, real tizimdagi barcha shriftlar bilan barqarorlik va foydalanuvchi ma’lumotlari (sozlamalar, kesh, PNG fayllar) bilan ishonchli ishlash."
+        ]
+      },
+      {
+        "sarlavha": "Muhokama",
+        "matn": [
+          "Dasturning asosiy afzalligi – o‘zbek tiliga xos muammoga yo‘naltirilganlik. Foydalanuvchi “O‘zbekcha to‘liq” saralashini tanlab, kompyuterdagi yuzlab shriftlar orasidan o‘zbek lotin va kirill matnlari uchun yaroqli shriftlarni bir zumda ajratib oladi. Tafsilotlar panelidagi harflar kataklari aynan qaysi belgi yetishmasligini ko‘rsatadi, bu esa qisman mos shriftlardan ongli ravishda foydalanish imkonini beradi.",
+          "Ikkinchi afzallik – samaradorlik. Faqat ko‘ringan qatorlarni chizish, tekshiruvni kichik guruhlarda fonda bajarish va natijalarni keshlash dasturni ko‘p shrift o‘rnatilgan kompyuterlarda ham qulay qiladi.",
+          "Uchinchi afzallik – xavfsizlik va shaffoflik: dastur tizim shriftlarini o‘zgartirmaydi, reestrni faqat o‘qiydi va internetga ulanmaydi.",
+          "Arxitektura nuqtai nazaridan shrift tekshiruvini operatsion tizimning matn chizish natijasiga emas, balki shrift glif jadvaliga tayantirish muhim yechim hisoblanadi: shu tufayli boshqa shriftdan avtomatik almashtirish holatlari tekshiruv natijasiga ta’sir qilmaydi. Tekshiruv mantig‘ining grafik interfeysdan ajratilganligi esa uni testlarda bevosita sinash va kelajakda boshqa alifbolar uchun ham qo‘llash imkonini beradi: buning uchun tekshiriladigan belgilar to‘plamini kengaytirish kifoya.",
+          "Cheklovlar: tekshiruv glif mavjudligini aniqlaydi, lekin uning sifatini (masalan, belgining boshqa harflar bilan uyg‘unligi yoki uslubiy mosligi) baholamaydi; tekshiruv shrift oilasining asosiy uslubi bo‘yicha bajariladi, ayrim uslublarda belgilar to‘plami farq qilishi mumkin; lotin yozuvi uchun faqat U+02BB va U+02BC belgilari tekshiriladi, amaliyotda ishlatiladigan boshqa apostrofsimon belgilar (masalan, U+2018 va U+2019) alohida tekshirilmaydi; dastur shrift o‘rnatish yoki o‘chirish funksiyalarini taqdim etmaydi; faqat kompyuterda o‘rnatilgan shriftlar ko‘rib chiqiladi.",
+          "Rivojlantirish istiqbollari: o‘rnatilmagan shrift fayllarini ko‘rish, boshqa apostrofsimon belgilarni ham tekshirish, har bir uslub bo‘yicha alohida tekshiruv va tanlangan shriftlar ro‘yxatini eksport qilish.",
+          "Umuman olganda, dastur tor ixtisoslashgan, ammo amaliy ahamiyatga ega vazifani hal qiladi va o‘zbek tilining raqamli muhitdagi ko‘rinishi sifatini oshirishga xizmat qiluvchi vositalar qatorini to‘ldiradi."
+        ]
+      },
+      {
+        "sarlavha": "Xulosa",
+        "matn": [
+          "Maqolada o‘rnatilgan shriftlarni ko‘rish, taqqoslash va ularda o‘zbek lotin hamda kirill harflari mavjudligini avtomatik tekshirish uchun “Shrift ko‘rgazmasi” dasturi taqdim etildi. Dastur Qt shrift tizimi asosida har bir shriftda kerakli glif mavjudligini aniqlaydi, natijalarni keshlaydi, shriftlarni o‘zbek harflari, turi va nomi bo‘yicha saralaydi, sevimlilar ro‘yxatini yuritadi, 2–4 shriftni yonma-yon taqqoslaydi va namunani PNG rasmga saqlaydi. Dasturning ishlashi 17 ta avtomatik test funksiyasi bilan tekshiriladi.",
+          "Ishning amaliy ahamiyati shundaki, o‘zbek tilidagi matnlar uchun shrift tanlashda uchraydigan keng tarqalgan nuqsonning – kerakli harf yo‘qligining – oldini olish vositasi yaratildi; ilmiy-uslubiy ahamiyati esa belgilar kodlash va shrift tuzilishi tushunchalarini o‘zbek alifbosi misolida ko‘rgazmali o‘rgatish imkoniyatida ko‘rinadi.",
+          "Dastur dizaynerlar, nashriyot va matbaa xodimlari, kotiblar, o‘qituvchilar va talabalar uchun o‘zbek tilidagi materiallarga mos shrift tanlash vositasi sifatida, shuningdek kompyuter grafikasi, tipografiya va axborot texnologiyalari fanlarida belgilar kodlash va shriftlar tuzilishini o‘rgatish uchun qo‘llanishi mumkin.",
+          "Keyingi tadqiqotlarda tekshiruvni har bir shrift uslubi bo‘yicha alohida bajarish va boshqa apostrofsimon belgilarni ham qamrab olish maqsadga muvofiq."
+        ]
+      }
+    ],
+    "adabiyotlar": [
+      "O‘zbekiston Respublikasi Prezidentining 2020-yil 5-oktabrdagi PF-6079-son “Raqamli O‘zbekiston – 2030” strategiyasini tasdiqlash va uni samarali amalga oshirish chora-tadbirlari to‘g‘risida”gi Farmoni.",
+      "The Unicode Consortium. The Unicode Standard [Elektron resurs]. – URL: https://www.unicode.org/standard/standard.html (murojaat sanasi: 27.11.2026).",
+      "Microsoft. OpenType Specification [Elektron resurs]. – URL: https://learn.microsoft.com/en-us/typography/opentype/spec/ (murojaat sanasi: 27.11.2026).",
+      "The Qt Company. QFontDatabase Class. Qt 6 Documentation [Elektron resurs]. – URL: https://doc.qt.io/qt-6/qfontdatabase.html (murojaat sanasi: 27.11.2026).",
+      "The Qt Company. QRawFont Class. Qt 6 Documentation [Elektron resurs]. – URL: https://doc.qt.io/qt-6/qrawfont.html (murojaat sanasi: 27.11.2026).",
+      "Python Software Foundation. Python 3.12 Documentation [Elektron resurs]. – URL: https://docs.python.org/3.12/ (murojaat sanasi: 27.11.2026).",
+      "The Qt Company. Qt for Python (PySide6) Documentation [Elektron resurs]. – URL: https://doc.qt.io/qtforpython-6/ (murojaat sanasi: 27.11.2026).",
+      "Pillow (PIL Fork) Documentation [Elektron resurs]. – URL: https://pillow.readthedocs.io/ (murojaat sanasi: 27.11.2026).",
+      "PyInstaller Development Team. PyInstaller Manual [Elektron resurs]. – URL: https://pyinstaller.org/en/stable/ (murojaat sanasi: 27.11.2026).",
+      "Hakimov B. Shrift ko‘rgazmasi: dastur manba kodi va tavsifi [Elektron resurs]. – URL: https://github.com/eduhakimov/shrift-korgazmasi (murojaat sanasi: 27.11.2026)."
+    ]
+  },
+  "qollanma": {
+    "sarlavha": "Foydalanish qo‘llanmasi",
+    "bolimlar": [
+      {
+        "sarlavha": "Umumiy ma’lumot",
+        "matn": [
+          "“Shrift ko‘rgazmasi” – kompyuteringizda o‘rnatilgan shriftlarni ko‘rish va taqqoslash uchun dastur. U barcha shriftlarni siz yozgan matnda bitta ro‘yxatda ko‘rsatadi va har bir shriftda o‘zbek lotin (o‘, g‘ harflari va tutuq belgisi) hamda o‘zbek kirill (Ў, Қ, Ғ, Ҳ) harflari borligini avtomatik tekshiradi.",
+          "Dastur o‘zbek tilidagi hujjat, taqdimot, plakat yoki veb-sahifa uchun shrift tanlaydigan dizaynerlar, kotiblar, o‘qituvchilar, talabalar va nashriyot xodimlari uchun mo‘ljallangan. Dastur shriftlarni o‘rnatmaydi va o‘zgartirmaydi, faqat ko‘rsatadi. Internet kerak emas.",
+          "Qo‘llanmada tugma va bo‘lim nomlari dasturning o‘zbekcha interfeysidagi kabi keltirilgan.",
+          "Dastur quyidagi imkoniyatlarga ega:",
+          "- barcha o‘rnatilgan shriftlarni o‘z matningiz va o‘lchamingizda bitta ro‘yxatda ko‘rish;",
+          "- har bir shriftda o‘zbek lotin va kirill harflari borligini avtomatik tekshirish;",
+          "- shriftlarni o‘zbek harflari mavjudligi, turi va nomi bo‘yicha saralash;",
+          "- sevimli shriftlar ro‘yxatini yuritish;",
+          "- 2–4 shriftni bir xil matnda yonma-yon taqqoslash;",
+          "- namunani PNG rasmga saqlash, shrift nomini nusxalash va fayl joyini ochish.",
+          "Dastur ayniqsa o‘zbek tilida lotin va kirill yozuvlarida birga ishlaydigan foydalanuvchilar uchun foydali: bitta saralash orqali ikkala yozuvni ham to‘liq qo‘llab-quvvatlovchi shriftlarni topish mumkin."
+        ]
+      },
+      {
+        "sarlavha": "Tizim talablari",
+        "matn": [
+          "- Operatsion tizim: Windows 10 (1809 va undan yuqori) yoki Windows 11, 64 bitli.",
+          "- Internet: talab qilinmaydi.",
+          "- O‘rnatish: talab qilinmaydi, dastur bitta .exe fayldan iborat.",
+          "- Dastur kompyuterda o‘rnatilgan shriftlar bilan ishlaydi; qancha ko‘p shrift o‘rnatilgan bo‘lsa, birinchi tekshiruv shuncha uzoq davom etadi, lekin u fonda bajariladi va natijalar eslab qolinadi."
+        ]
+      },
+      {
+        "sarlavha": "O‘rnatish va ishga tushirish",
+        "matn": [
+          "1. Dasturning GitHub sahifasidagi (https://github.com/eduhakimov/shrift-korgazmasi) “Releases” bo‘limidan ShriftKorgazmasi.exe faylini yuklab oling.",
+          "2. Faylni qulay papkaga joylashtiring va ikki marta bosib ishga tushiring.",
+          "3. Windows SmartScreen ogohlantirish chiqarsa, “Batafsil” havolasini, so‘ng “Baribir ishga tushirish” tugmasini bosing.",
+          "4. Birinchi ishga tushirishda dastur barcha shriftlarni fonda tekshiradi: ro‘yxat ostida “Tekshirilmoqda: …” yozuvi ko‘rinadi. Bu vaqtda dasturdan foydalanishingiz mumkin. Keyingi safar faqat yangi o‘rnatilgan shriftlar tekshiriladi.",
+          "Dastur yopilganda oyna o‘lchami va joylashuvi eslab qolinadi. Dastur kompyuterda hech qanday o‘zgarish qilmaydi, shuning uchun uni o‘chirish uchun .exe faylni o‘chirish kifoya."
+        ]
+      },
+      {
+        "sarlavha": "Dastur oynasi bilan tanishish",
+        "matn": [
+          "Oynaning yuqori qismida menyu satri (“Fayl”, “Sozlamalar”, “Yordam”), dastur nomi va o‘ng tomonda “Ro‘yxat” hamda “Taqqoslash” ko‘rinishlarini almashtiruvchi tugmalar joylashgan.",
+          "“Ro‘yxat” ko‘rinishida yuqorida boshqaruv kartochkasi bor: “Qidirish”, “Saralash”, “Turi”, “Namuna matn”, “O‘zbekcha namuna” tugmasi va “O‘lcham” slayderi. Uning ostida chapda shriftlar ro‘yxati, o‘ngda tanlangan shrift tafsilotlari joylashgan. Ro‘yxatdagi har bir shrift yonida “Lotin” va “Kirill” belgilari bor: yashil belgi – harflar bor, qizil belgi – yo‘q. Ro‘yxat ostida shriftlar soni (masalan, “268 ta shrift”) va o‘zbekcha to‘liq mos shriftlar soni ko‘rsatiladi.",
+          "Tafsilotlar panelida shrift nomi, “Uslub” ro‘yxati, katta namuna, “O‘zbek harflari” kataklari va amal tugmalari joylashgan.",
+          "“Taqqoslash” ko‘rinishida yuqorida “Namuna matn” maydoni, “Shriftlar soni”, “O‘lcham” va “PNG ga saqlash” tugmasi, ostida esa tanlangan sondagi shrift kataklari joylashgan. Har bir katakda tartib raqami (masalan, “1-shrift”), shriftni tanlash ro‘yxati, “Lotin” va “Kirill” belgilari hamda namuna matn ko‘rsatiladi.",
+          "Ro‘yxatda sevimli shriftlar nomi yonida yulduzcha belgisi bilan ko‘rsatiladi. Oynaning eng pastki satrida dastur holati va bajarilgan amallar haqida qisqa xabarlar chiqadi (masalan, “Saqlandi: …” yoki “Taqqoslashga qo‘shildi: …”).",
+          "Ro‘yxat va tafsilotlar paneli bir-biriga bog‘langan: ro‘yxatda tanlangan shrift darhol o‘ng panelda ko‘rsatiladi."
+        ],
+        "rasmlar": [
+          {
+            "fayl": "docs/screenshots/1.png",
+            "izoh": "“Ro‘yxat” ko‘rinishi: boshqaruv kartochkasi, shriftlar ro‘yxati va tafsilotlar paneli"
+          }
+        ]
+      },
+      {
+        "sarlavha": "Asosiy amallar",
+        "matn": [
+          "Quyida dasturning asosiy amallari tavsiflangan. Odatiy ish tartibi: o‘zbekcha mos shriftlarni saralash – o‘z matningizda ko‘rish – yoqqanlarini sevimlilarga qo‘shish – taqqoslash – tanlangan shrift nomini nusxalab, hujjatda qo‘llash.",
+          "**O‘zbek tiliga mos shrift topish.**",
+          "1. “Saralash” ro‘yxatidan “O‘zbekcha to‘liq (lotin + kirill)” ni tanlang. Ro‘yxatda faqat har ikki yozuvdagi o‘zbek harflari bor shriftlar qoladi.",
+          "2. Faqat lotin yozuvidagi matn uchun “O‘zbek lotin”, faqat kirill yozuvi uchun “O‘zbek kirill” variantini tanlash mumkin.",
+          "3. Ro‘yxatdan shriftni tanlang va o‘ngdagi panelda uning namunasini va “O‘zbek harflari” kataklarini ko‘rib chiqing.",
+          "**O‘z matningizda ko‘rish.**",
+          "1. “Namuna matn” maydoniga o‘z matningizni yozing (masalan, hujjat sarlavhasi yoki tashkilot nomi). Barcha shriftlar shu matn bilan ko‘rsatiladi.",
+          "2. “O‘lcham” slayderi bilan namuna o‘lchamini o‘zgartiring.",
+          "3. Standart o‘zbekcha namunaga qaytish uchun “O‘zbekcha namuna” tugmasini bosing.",
+          "**Qidirish va saralash.** “Qidirish” maydoniga shrift nomining bir qismini yozing (masalan, “segoe”). “Turi” ro‘yxatida “Monospace (bir xil kenglik)” – dasturlash va jadvallar uchun, “Proporsional” – oddiy matn uchun, “Belgili (Symbol)” – belgi va piktogramma shriftlarini ko‘rish uchun.",
+          "**Shrift tafsilotlari.** Tanlangan shrift uchun “Uslub” ro‘yxatidan uslubni (masalan, Regular, Bold, Italic) tanlang. “O‘zbek harflari” bo‘limida har bir maxsus belgi alohida katakda ko‘rsatiladi. Yo‘q belgilar ajratib ko‘rsatiladi va ularning ro‘yxati beriladi; namuna matnida bunday harf boshqa shriftdan olinadi yoki bo‘sh kvadrat bo‘lib chiqadi.",
+          "**Sevimlilar.** Yoqqan shriftni tanlab, “Sevimlilarga” tugmasini bosing. Sevimlilar ro‘yxatini ko‘rish uchun “Saralash” da “Sevimlilar” ni tanlang. Shriftni ro‘yxatdan olib tashlash uchun “Sevimlilardan olish” tugmasini bosing.",
+          "**Shrift nomini nusxalash va faylini topish.** “Nomini nusxalash” tugmasi shrift nomini almashish buferiga ko‘chiradi; uni Word, PowerPoint yoki grafik muharrirga qo‘yish mumkin. “Fayl joyini ochish” tugmasi Windows Explorer’da shrift fayli joylashgan papkani ochadi. Fayl topilmasa, dastur bu tizim yoki ilova ichidagi shrift bo‘lishi mumkinligini xabar qiladi.",
+          "**Shriftlarni taqqoslash.**",
+          "1. Ro‘yxatda shriftni tanlab, “Taqqoslashga” tugmasini bosing. Buni bir nechta shrift uchun takrorlang.",
+          "2. Yuqoridagi “Taqqoslash” tugmasi bilan taqqoslash ko‘rinishiga o‘ting.",
+          "3. “Shriftlar soni” maydonida 2, 3 yoki 4 ni tanlang. Har bir katakdagi ro‘yxatdan shriftni o‘zgartirish mumkin.",
+          "4. “Namuna matn” maydonidagi matn va “O‘lcham” barcha kataklarga qo‘llanadi. Har bir katakda “Lotin” va “Kirill” belgilari ko‘rinadi.",
+          "**Namunani rasmga saqlash.** Tafsilotlar panelida yoki taqqoslash ko‘rinishida “PNG ga saqlash” tugmasini bosing, fayl nomi va joyini tanlang. Rasmda namuna va shrift nomi, uslubi hamda o‘lchami ko‘rsatiladi.",
+          "**Shrift tanlash bo‘yicha maslahatlar.**",
+          "- Rasmiy hujjatlar uchun “O‘zbekcha to‘liq (lotin + kirill)” belgilangan shriftlardan foydalaning: hujjat qaysi yozuvda yozilishidan qat’i nazar, harflar bir xil ko‘rinadi.",
+          "- Namunani hujjatdagi haqiqiy o‘lchamga yaqin o‘lchamda ko‘ring: kichik o‘lchamda yaxshi o‘qiladigan shrift sarlavhada boshqacha taassurot qoldirishi mumkin.",
+          "- Bezakli (masalan, qo‘lyozmaga o‘xshash) shriftlarni faqat sarlavha va qisqa matnlar uchun ishlating.",
+          "- Hujjatni boshqa kompyuterda ochish kerak bo‘lsa, u yerda ham shu shrift o‘rnatilganini tekshiring.",
+          "**Tanlangan shriftni hujjatda qo‘llash.** “Nomini nusxalash” tugmasi bilan shrift nomini nusxalang, so‘ng Word, PowerPoint yoki boshqa dasturdagi shrift maydoniga qo‘ying. Bu nomni qo‘lda yozishdagi xatolarning oldini oladi.",
+          "**Uslublarni ko‘rish.** Ko‘plab shriftlar bir nechta uslubga ega (oddiy, qalin, kursiv va boshqalar). Tafsilotlar panelidagi “Uslub” ro‘yxatidan uslubni tanlang – namuna shu uslubda ko‘rsatiladi. Uslub tanlangan holda “PNG ga saqlash” bosilsa, rasmda ham shu uslub ishlatiladi.",
+          "**Ro‘yxat bo‘ylab harakatlanish.** Ro‘yxatni sichqoncha g‘ildiragi bilan aylantiring, shriftni bosib tanlang. Klaviaturadagi yuqoriga va pastga strelkalari bilan ham qo‘shni shriftga o‘tish mumkin.",
+          "**Rasmga nima chiziladi?** Tafsilotlar panelidan saqlangan rasmda sizning namuna matningiz va undan keyin dasturning standart o‘zbekcha namunasi, tepada esa shrift nomi, uslubi va o‘lchami ko‘rsatiladi. Taqqoslash ko‘rinishidan saqlangan rasmda esa barcha kataklar ekrandagi ko‘rinishda tasvirlanadi."
+        ],
+        "rasmlar": [
+          {
+            "fayl": "docs/screenshots/2.png",
+            "izoh": "“Taqqoslash” ko‘rinishi (qorong‘i mavzu): to‘rtta shrift yonma-yon"
+          }
+        ]
+      },
+      {
+        "sarlavha": "Sozlamalar",
+        "matn": [
+          "- **Til.** “Sozlamalar → Til” menyusida o‘zbek, rus yoki ingliz tilini tanlang; dastur qayta ishga tushadi.",
+          "- **Mavzu.** “Sozlamalar → Mavzu” menyusida “Tizim bo‘yicha”, “Yorug‘” yoki “Qorong‘i” ni tanlang.",
+          "- Namuna matn, o‘lcham, sevimli shriftlar hamda taqqoslash ko‘rinishidagi shriftlar soni va tanlangan shriftlar keyingi ishga tushirishda eslab qolinadi.",
+          "Sozlamalar avtomatik saqlanadi, alohida “Saqlash” tugmasi yo‘q. Interfeys tilini o‘zgartirganda dastur qayta ishga tushadi, sevimlilar va namuna matni saqlanib qoladi."
+        ]
+      },
+      {
+        "sarlavha": "Ma’lumotlarni saqlash va xavfsizlik",
+        "matn": [
+          "- Dastur shriftlarni o‘rnatmaydi, o‘chirmaydi va o‘zgartirmaydi. Windows reestridagi shriftlar ro‘yxati faqat o‘qiladi.",
+          "- Sozlamalar, sevimli shriftlar va o‘zbek harflari tekshiruvi natijalari (JSON formatidagi kesh fayli) %APPDATA%\\BahtiyorSoft\\shrift-korgazmasi papkasida saqlanadi. Xatolar jurnali (log.txt) ham shu papkada.",
+          "- PNG rasmlar faqat siz tanlagan joyga saqlanadi.",
+          "- Dastur internetga ulanmaydi.",
+          "- Kesh fayli o‘chirilsa, dastur keyingi ishga tushirishda barcha shriftlarni qayta tekshiradi; bu ma’lumot yo‘qolishiga olib kelmaydi.",
+          "- Sozlamalar fayli shikastlangan bo‘lsa, dastur standart qiymatlar bilan ishga tushadi.",
+          "- Dastur Windows reestriga va shriftlar papkasiga hech narsa yozmaydi."
+        ]
+      },
+      {
+        "sarlavha": "Ko‘p uchraydigan savollar va muammolar",
+        "matn": [
+          "**Ro‘yxatda “Hech narsa topilmadi” yozuvi chiqdi.** Qidiruv yoki saralash shartlariga mos shrift yo‘q. Qidiruv maydonini tozalang yoki “Saralash” da “Barcha shriftlar” ni tanlang.",
+          "**Yangi o‘rnatgan shriftim ko‘rinmayapti.** Shriftni o‘rnatgandan keyin dasturni qayta ishga tushiring.",
+          "**Shrift yonida belgilar o‘rnida “tekshirilmoqda…” yozuvi bor.** Dastur shriftlarni fonda tekshirmoqda; bir oz kuting.",
+          "**“Shrift fayli topilmadi” xabari.** Ba’zi shriftlar tizim ichida yoki ilovalar bilan birga keladi va alohida fayl sifatida ro‘yxatdan o‘tmagan bo‘ladi.",
+          "**Shrift “Lotin” bo‘yicha qizil belgilangan, lekin men unda o‘zbekcha yozaman.** Dastur o‘, g‘ harflari va tutuq belgisi uchun U+02BB va U+02BC belgilarini tekshiradi. Matningizda oddiy apostrof yoki boshqa belgi ishlatilgan bo‘lishi mumkin.",
+          "**Qo‘llanmani qayerdan ochaman?** “Yordam → Qo‘llanma” menyusi yoki F1 tugmasi orqali.",
+          "**Dastur shrift o‘rnata oladimi?** Yo‘q. Dastur faqat o‘rnatilgan shriftlarni ko‘rsatadi va taqqoslaydi. Shriftni o‘rnatish uchun Windows’ning standart usulidan foydalaning, so‘ng dasturni qayta ishga tushiring.",
+          "**Nima uchun ba’zi eski shriftlar ro‘yxatda yo‘q?** Masshtablanmaydigan eski rastr shriftlar va tizimning ichki shriftlari ro‘yxatga kiritilmaydi.",
+          "**Taqqoslash rasmi qayerga saqlanadi?** “PNG ga saqlash” bosilganda saqlash oynasi ochiladi va sukut bo‘yicha “Hujjatlar” papkasi taklif etiladi; boshqa joyni ham tanlash mumkin.",
+          "**Namuna matnda ba’zi harflar boshqacha ko‘rinyapti.** Tanlangan shriftda shu harf yo‘q: u boshqa shriftdan olinmoqda yoki bo‘sh kvadrat bo‘lib chiqmoqda. Tafsilotlar panelidagi “O‘zbek harflari” bo‘limida qaysi belgi yetishmasligini tekshiring va to‘liq mos shriftni tanlang.",
+          "**O‘lchamni qanday katta qilaman?** “O‘lcham” slayderini o‘ngga suring; ro‘yxat ko‘rinishida eng katta qiymat 96 piksel.",
+          "**Monospace shriftlar qayerda kerak?** Dastur kodi, jadval va ustunlarda tekislangan matnlar uchun: ularda har bir belgi bir xil kenglikka ega. “Turi” ro‘yxatida “Monospace (bir xil kenglik)” ni tanlang.",
+          "**Taqqoslashga nechta shrift qo‘shish mumkin?** 2 dan 4 tagacha. Ko‘proq shriftni solishtirish uchun ro‘yxat ko‘rinishidan foydalaning: u yerda barcha shriftlar bir xil matnda ko‘rinadi."
+        ]
+      }
+    ]
+  },
+  "uslubiy": {
+    "sarlavha": "Uslubiy ko‘rsatma",
+    "bolimlar": [
+      {
+        "sarlavha": "Uslubiy ko‘rsatmaning maqsadi va vazifalari",
+        "matn": [
+          "Mazkur uslubiy ko‘rsatma “Shrift ko‘rgazmasi” dasturidan oliy ta’lim muassasalari, kollej va texnikumlarda o‘quv mashg‘ulotlari o‘tkazishda hamda tashkilotlarda hujjat va bosma mahsulotlar tayyorlashda foydalanish tartibini belgilaydi.",
+          "Maqsad – tinglovchilarda shrift, glif va belgilar kodlash (Unicode) tushunchalari, o‘zbek alifbosining raqamli muhitdagi xususiyatlari va o‘zbek tilidagi matnlar uchun mos shrift tanlash ko‘nikmalarini shakllantirish.",
+          "Vazifalar:",
+          "- shrift, shrift oilasi, uslub va glif tushunchalarini tushuntirish;",
+          "- Unicode tizimi va o‘zbek lotin hamda kirill alifbolaridagi maxsus belgilarning kodlari bilan tanishtirish;",
+          "- shriftda glif yo‘qligi oqibatlarini (boshqa shriftdan almashtirish, bo‘sh kvadrat) ko‘rsatish;",
+          "- shrift turlarini (serifli, serifsiz, monospace, belgili) farqlashga o‘rgatish;",
+          "- hujjat yoki dizayn uchun shrift tanlashni asoslashga o‘rgatish;",
+          "- shriftlarning litsenziyaviy cheklovlariga hurmat madaniyatini shakllantirish.",
+          "Mashg‘ulot yakunida tinglovchi bilishi kerak: shrift, glif, shrift oilasi va uslub tushunchalari, Unicode tizimining vazifasi, o‘zbek lotin va kirill alifbolaridagi maxsus belgilar, shrift turlari. Tinglovchi bajara olishi kerak: o‘zbek tiliga mos shriftlarni topish, yetishmayotgan belgilarni aniqlash, shriftlarni taqqoslash va tanlovni asoslash, namunani rasm ko‘rinishida tayyorlash.",
+          "Mashg‘ulot uchun Windows 10 yoki 11 o‘rnatilgan kompyuterlar va dastur yetarli; internet va qo‘shimcha jihozlar talab qilinmaydi."
+        ]
+      },
+      {
+        "sarlavha": "Qo‘llash sohasi va maqsadli auditoriya",
+        "matn": [
+          "Dasturdan quyidagi fanlar va kurslarda foydalanish tavsiya etiladi: “Kompyuter grafikasi”, “Tipografiya va shrift dizayni”, “Grafik dizayn”, “Nashriyot ishi va kompyuter verstkasi”, “Informatika va axborot texnologiyalari” (belgilar kodlash mavzusi), “Ish yuritish va kotiblik ishi”, “Veb-dizayn”.",
+          "Maqsadli auditoriya:",
+          "- dizayn, kompyuter grafikasi va nashriyot ishi yo‘nalishlari talabalari;",
+          "- informatika yo‘nalishi talabalari (Unicode va belgilar kodlash mavzusi uchun);",
+          "- kollej va texnikum o‘quvchilari;",
+          "- tashkilotlarning devonxona, matbuot xizmati va dizayn bo‘limlari xodimlari.",
+          "Kasbiy vazifalardan misollar: tashkilot blanki yoki taqdimot shabloni uchun o‘zbek lotin va kirill yozuvlarini to‘liq qo‘llab-quvvatlovchi shrift tanlash, plakat sarlavhasi uchun bir nechta shriftni taqqoslash va natijani rahbariyatga rasm ko‘rinishida yuborish, kirill yozuvidagi eski hujjatni qayta terish uchun mos shrift topish.",
+          "Dastur ikki darajada qo‘llanishi mumkin. Amaliy darajada u dizayn va ish yuritish bo‘yicha aniq vazifani – mos shrift tanlashni – hal qilish vositasi bo‘ladi. Nazariy darajada esa informatika fanlarida belgilar kodlash mavzusini ko‘rgazmali tushuntirish uchun xizmat qiladi: tinglovchi bir xil ko‘rinadigan, lekin turli kodga ega belgilar (masalan, turli apostrofsimon belgilar) mavjudligini va bu matnni qayta ishlashga qanday ta’sir qilishini amalda ko‘radi.",
+          "Tashkilotlarda dastur blank, xat, e’lon va taqdimot shablonlari uchun yagona shrift tanlashda qo‘l keladi: mas’ul xodim o‘zbekcha to‘liq mos shriftlarni taqqoslash rasmi bilan rahbariyatga taqdim etib, tanlovni asoslashi mumkin.",
+          "Kollej va texnikumlarda dastur “Ish yuritish” va “Kompyuter savodxonligi” fanlarida hujjat rasmiylashtirish madaniyatini shakllantirish uchun qo‘llanishi mumkin: o‘quvchilar o‘zbek harflarining to‘g‘ri ko‘rinishiga e’tibor berishni o‘rganadi."
+        ]
+      },
+      {
+        "sarlavha": "O‘quv mashg‘ulotida foydalanish tartibi",
+        "matn": [
+          "80 daqiqalik amaliy mashg‘ulot rejasi:",
+          "1. **Tashkiliy qism (5 daqiqa).** Davomat, mavzu va maqsadni e’lon qilish, kompyuterlarda dastur ishga tushganini tekshirish.",
+          "2. **Nazariy qism (20 daqiqa).** Shrift va glif tushunchalari. Shrift oilasi va uslublar. Serifli, serifsiz, monospace va belgili shriftlar. Unicode tizimi: har bir belgining yagona kodi. O‘zbek lotin alifbosida o‘, g‘ va tutuq belgisi uchun ishlatiladigan belgilar, o‘zbek kirill alifbosining maxsus harflari. Glif yo‘q bo‘lganda nima bo‘ladi. Dastur oynasi bilan tanishtirish.",
+          "3. **Amaliy qism (45 daqiqa).** Tinglovchilar “Amaliy topshiriqlar” bo‘limidagi 1–6-topshiriqlarni bajaradi: o‘zbekcha mos shriftlarni topadi, harflar kataklarini tahlil qiladi, shriftlarni taqqoslaydi va natijani PNG rasmga saqlaydi.",
+          "4. **Yakuniy qism (10 daqiqa).** Natijalarni muhokama qilish: kompyuterdagi shriftlarning qancha qismi o‘zbek tilini to‘liq qo‘llab-quvvatlashi, qaysi belgilar eng ko‘p yetishmasligi. Nazorat savollari, baholash, mustaqil ish topshirig‘i.",
+          "Mashg‘ulotdan oldin dasturni kamida bir marta ishga tushirib qo‘yish tavsiya etiladi: birinchi ishga tushirishda barcha shriftlar fonda tekshiriladi va natijalar keshlanadi.",
+          "Nazariy qismda o‘qituvchi proyektor orqali bitta o‘zbekcha matnni avval to‘liq mos shriftda, so‘ng qizil belgilangan shriftda ko‘rsatib, glif almashtirilishi yoki bo‘sh kvadrat chiqishini namoyish qilishi tavsiya etiladi. So‘ngra “O‘zbek harflari” kataklari orqali aynan qaysi belgi yetishmasligi ko‘rsatiladi.",
+          "Amaliy qismni juftlikda tashkil etish mumkin: tinglovchilar turli vazifalar (rasmiy hujjat, plakat, taqdimot, jadval) uchun shrift tanlaydi va bir-birining tanlovini asoslash bo‘yicha savollar beradi.",
+          "Mashg‘ulot natijasi sifatida har bir tinglovchi taqqoslash rasmi (PNG), yetishmayotgan belgilar jadvali va tanlangan shriftlar ro‘yxatini topshiradi.",
+          "Agar mashg‘ulot ikki akademik soatdan iborat bo‘lsa, ikkinchi soatda tinglovchilar tanlagan shriftlaridan foydalanib, blank yoki e’lon maketini matn muharririda tayyorlaydi va natijani guruhda muhokama qiladi."
+        ],
+        "rasmlar": [
+          {
+            "fayl": "docs/screenshots/1.png",
+            "izoh": "Mashg‘ulotda tahlil qilinadigan “O‘zbek harflari” kataklari va shriftlar ro‘yxati"
+          }
+        ]
+      },
+      {
+        "sarlavha": "Amaliy topshiriqlar",
+        "matn": [
+          "Topshiriqlar murakkablik darajasi ortib borish tartibida joylashtirilgan. Har bir topshiriq uchun kutilgan natija ko‘rsatilgan; o‘qituvchi uni tinglovchining jadvali, saqlangan rasm va dastur oynasidagi holat orqali tekshiradi. Kompyuterlardagi shriftlar to‘plami farq qilishi mumkinligi sababli sonli natijalar tinglovchilar orasida farqlanishi tabiiy.",
+          "1. **Mos shriftlarni topish.** “Saralash” da “O‘zbekcha to‘liq (lotin + kirill)” ni tanlang va kompyuterdagi shriftlarning necha foizi o‘zbek tilini to‘liq qo‘llab-quvvatlashini hisoblang. Kutilgan natija: ro‘yxat ostidagi sonlar asosida hisoblangan foiz.",
+          "2. **Yetishmayotgan belgilar.** Qizil belgilangan uchta shriftni tanlab, “O‘zbek harflari” kataklari bo‘yicha qaysi belgilar yetishmasligini yozing. Kutilgan natija: shriftlar va yetishmayotgan belgilar jadvali.",
+          "3. **O‘z matni.** “O‘zbekcha namuna” tugmasini bosing (namuna lotin va kirill yozuvidagi maxsus belgilarni o‘z ichiga oladi), so‘ng yetishmayotgan belgili shriftni tanlab, namuna matn qanday ko‘rinishini kuzating. Kutilgan natija: tinglovchi glif almashtirilishi yoki bo‘sh kvadrat chiqishini izohlaydi.",
+          "4. **Turlar bo‘yicha saralash.** “Turi” ro‘yxati yordamida monospace shriftlar ichidan o‘zbekcha to‘liq moslarini toping. Kutilgan natija: dasturlash yoki jadvallar uchun mos shriftlar ro‘yxati.",
+          "5. **Taqqoslash.** Rasmiy hujjat uchun to‘rtta o‘zbekcha mos shriftni “Taqqoslash” ko‘rinishida solishtiring va eng mosini asoslab tanlang. Kutilgan natija: tanlov va uning qisqa asoslanishi.",
+          "6. **PNG namuna.** Tanlangan shriftlar taqqoslashini PNG rasmga saqlang. Kutilgan natija: shrift nomlari ko‘rsatilgan rasm fayli.",
+          "7. **Sevimlilar to‘plami.** Plakat, rasmiy hujjat va taqdimot uchun mos shriftlardan iborat sevimlilar ro‘yxatini tuzing. Kutilgan natija: “Sevimlilar” saralashida ko‘rinadigan 5–8 shrift.",
+          "8. **Shrift fayli.** Tanlangan shriftning fayl joyini “Fayl joyini ochish” orqali toping va fayl kengaytmasi (TTF, OTF, TTC) haqida ma’lumot yozing. Kutilgan natija: shrift fayli nomi va formati.",
+          "Vaqt yetmagan holda 7–8-topshiriqlar mustaqil ish sifatida uyga beriladi va keyingi mashg‘ulotda tekshiriladi.",
+          "Barcha topshiriqlar natijalari tinglovchining jadvaliga yoziladi: shrift nomi, turi, “Lotin” va “Kirill” holati, yetishmayotgan belgilar va xulosa."
+        ]
+      },
+      {
+        "sarlavha": "Baholash mezonlari",
+        "matn": [
+          "Baholash amaliy topshiriqlar natijalari, ularning tahlili va nazorat savollariga javoblar asosida amalga oshiriladi.",
+          "Amaliy ish 100 ballik tizimda baholanadi:",
+          "- o‘zbekcha mos shriftlarni to‘g‘ri saralash va hisob-kitob – 15 ball;",
+          "- yetishmayotgan belgilarni aniqlash va izohlash – 20 ball;",
+          "- shriftlarni taqqoslash va tanlovni asoslash – 20 ball;",
+          "- PNG namuna va sevimlilar ro‘yxati – 15 ball;",
+          "- Unicode va glif tushunchalarini to‘g‘ri qo‘llash – 15 ball;",
+          "- nazorat savollariga javoblar – 15 ball.",
+          "Baho: 86–100 ball – “a’lo”, 71–85 – “yaxshi”, 55–70 – “qoniqarli”, 55 dan kam – “qoniqarsiz”.",
+          "Baholashda tinglovchining tanlovni asoslay olishi (nima uchun aynan shu shrift tanlangani, uning o‘zbek harflarini qo‘llab-quvvatlashi va vazifaga mosligi) muhim mezon hisoblanadi. Ballar jurnalda qayd etiladi.",
+          "Mustaqil ish natijalari ham shu mezonlar asosida baholanadi va joriy nazorat balliga qo‘shiladi."
+        ]
+      },
+      {
+        "sarlavha": "Nazorat savollari",
+        "matn": [
+          "Savollar og‘zaki so‘rov yoki qisqa yozma nazorat uchun mo‘ljallangan. Har bir to‘liq va asoslangan javob uchun 1,5 ball beriladi.",
+          "1. Shrift va glif tushunchalarining farqi nimada?",
+          "2. Shrift oilasi va uslub nima?",
+          "3. Unicode tizimining vazifasi nimadan iborat?",
+          "4. O‘zbek lotin alifbosidagi o‘, g‘ va tutuq belgisi uchun dasturda qaysi Unicode belgilari tekshiriladi?",
+          "5. O‘zbek kirill alifbosining qaysi harflari rus alifbosida yo‘q?",
+          "6. Shriftda kerakli glif bo‘lmasa, matnda nima sodir bo‘ladi?",
+          "7. Monospace va proporsional shriftlarning farqi nimada va ular qayerda qo‘llanadi?",
+          "8. Nima uchun rasmiy hujjat uchun o‘zbek tilini to‘liq qo‘llab-quvvatlovchi shrift tanlash muhim?",
+          "9. Dastur tekshiruv natijalarini nima uchun keshlaydi?",
+          "10. Shriftlardan foydalanishda qanday litsenziyaviy cheklovlar bo‘lishi mumkin?",
+          "Javob berishda tinglovchi dasturdagi tegishli funksiyani, masalan, “O‘zbek harflari” kataklarini ko‘rsatib berishi tavsiya etiladi.",
+          "Yozma nazoratda tinglovchiga 10 daqiqa vaqt beriladi."
+        ]
+      },
+      {
+        "sarlavha": "Mustaqil ish uchun tavsiyalar",
+        "matn": [
+          "- O‘z kompyuteringizdagi shriftlarni tahlil qilib, o‘zbek tilini to‘liq qo‘llab-quvvatlovchi shriftlar ro‘yxatini tuzing va ularni turlari bo‘yicha guruhlang.",
+          "- Unicode jadvallaridan o‘zbek lotin va kirill alifbolarining maxsus belgilari kodlarini topib, qisqa ma’lumotnoma tayyorlang.",
+          "- Tashkilotingiz yoki o‘quv muassasangiz uchun blank va taqdimot shabloniga mos shrift juftligini (sarlavha va matn uchun) tanlang va taqqoslash rasmini ilova qilib asoslang.",
+          "- Bitta o‘zbekcha matnni turli shriftlarda chop etib, ekrandagi va qog‘ozdagi ko‘rinishni solishtiring.",
+          "- Mustaqil ish natijalarini keyingi mashg‘ulotda qisqa chiqish shaklida taqdim eting.",
+          "- Turli apostrofsimon belgilar (U+0027, U+2018, U+2019, U+02BB, U+02BC) ro‘yxatini tuzib, ularning nomi va qo‘llanish sohasini Unicode manbalari asosida tavsiflang.",
+          "- Bitta o‘zbekcha jumlani turli apostrofsimon belgilar bilan yozib, ularni matn muharririda qidirish va almashtirish natijalarini solishtiring; bir xil ko‘rinadigan belgilar nima uchun turlicha qidirilishini tushuntiring.",
+          "- Tanlagan shriftingiz bilan o‘zbek lotin va kirill yozuvidagi bir sahifalik matnni terib, harflarning bir xil ko‘rinishini tekshiring va natijani PDF yoki rasm ko‘rinishida taqdim eting."
+        ]
+      },
+      {
+        "sarlavha": "Xavfsizlik va axborot madaniyati qoidalari",
+        "matn": [
+          "- Shriftlar ham intellektual mulk hisoblanadi: tijorat maqsadlarida foydalanishdan oldin shrift litsenziyasini tekshiring.",
+          "- Noma’lum saytlardan shrift fayllarini yuklab olmang va o‘rnatmang: ular zararli dastur bo‘lishi mumkin.",
+          "- O‘quv kompyuterlarida shriftlarni faqat administrator ruxsati bilan o‘rnating yoki o‘chiring; dasturning o‘zi shriftlarni o‘zgartirmaydi.",
+          "- Rasmiy hujjatlarda o‘zbek harflarini to‘g‘ri belgilar bilan yozing va ularni to‘liq qo‘llab-quvvatlovchi shriftdan foydalaning.",
+          "- Kompyuter sinfida ishlash va texnika xavfsizligi qoidalariga rioya qiling.",
+          "- Dasturni faqat rasmiy GitHub sahifasidan yuklab oling.",
+          "- Mashg‘ulot yakunida o‘quv kompyuterida saqlangan PNG fayllaringizni o‘z saqlash vositangizga ko‘chirib, kompyuterdan o‘chiring.",
+          "- Taqqoslash rasmlarini tarqatishda shrift nomlari to‘g‘ri ko‘rsatilganini tekshiring, shunda qabul qiluvchi aynan shu shriftni topa oladi.",
+          "- Shriftlarni boshqa kompyuterga ko‘chirishda yoki hamkasblarga yuborishda ularning litsenziyasi bunga ruxsat berishini tekshiring.",
+          "- Ekrandan uzoq vaqt ishlaganda ko‘z charchamasligi uchun muntazam tanaffus qiling va mos o‘lcham hamda mavzuni (yorug‘ yoki qorong‘i) tanlang."
+        ]
+      }
+    ]
+  }
+}
